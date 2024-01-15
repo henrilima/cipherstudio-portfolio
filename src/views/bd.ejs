@@ -1,0 +1,193 @@
+<%- include("./partials/head") %> <%-
+include("./partials/close-head-start-body") %>
+
+<header id="navbar">
+    <img
+        src="/images/icon.png"
+        alt="logo Cipher"
+        draggable="false"
+        title="logo Cipher"
+        id="logo"
+    />
+    <nav>
+        <ul>
+            <li><a href="/#" class="hover-effect">Início</a></li>
+            <li><a href="#filme" class="hover-effect">Filme</a></li>
+            <li><a href="#serie" class="hover-effect">Série</a></li>
+            <li><a href="#letra" class="hover-effect">Letra</a></li>
+            <%if (typeof user !== "undefined" && user) { %>
+                <li><a href="/google/logout" class="hover-effect orange">Sair</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <a href="/api" class="API hover-effect">
+        <p>
+            + Cipher API <%if (user) { %> <br /><sup><%= user.username %></sup>
+            <% } %>
+        </p>
+        <img
+            src="/images/cipherlogo.png"
+            alt="Cipher Character"
+            title="Cipher Character"
+            draggable="false"
+            class="character"
+        />
+    </a>
+</header>
+
+<main id="bd">
+    <div id="filme" class="bottom-border">
+        <div>
+            <h2>Buscar por Filmes</h2>
+            <div>
+                <input
+                    type="text"
+                    name="filme"
+                    id="filme-input"
+                    placeholder="Insira o nome do filme"
+                    onkeydown="if(event.key === 'Enter') document.getElementById('send-filme').click()"
+                />
+                <div id="send-filme">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="" id="filme-src" />
+            <h2 id="filme-nome"></h2>
+            <p id="filme-sinopse">Sua pesquisa aparecerá aqui. :D</p>
+        </div>
+    </div>
+    <div id="serie" class="bottom-border">
+        <div>
+            <h2>Buscar por Série</h2>
+            <div>
+                <input
+                    type="text"
+                    name="serie"
+                    id="serie-input"
+                    placeholder="Insira o nome da série"
+                    onkeydown="if(event.key === 'Enter') document.getElementById('send-serie').click()"
+                />
+                <div id="send-serie">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="" id="serie-src" />
+            <h2 id="serie-nome"></h2>
+            <p id="serie-sinopse">Sua pesquisa aparecerá aqui. :D</p>
+        </div>
+    </div>
+    <div id="letra">
+        <div>
+            <h2>Buscar por Letras</h2>
+            <div>
+                <input
+                    type="text"
+                    name="letra"
+                    id="letra-input"
+                    placeholder="Insira o nome da música"
+                    onkeydown="if(event.key === 'Enter') document.getElementById('send-letra').click()"
+                />
+                <div id="send-letra">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 id="song-name"></h2>
+            <p id="song-lyrics"></p>
+        </div>
+    </div>
+</main>
+
+<button id="btnTopo" onclick="scrollToTop()" class="hover-effect">
+    Conclusão de leitura: 0%
+    <i class="fa-solid fa-arrows-up-down margin-icon"></i>
+</button>
+
+<script>
+    document.getElementById("send-filme").addEventListener("click", (event) => {
+        document.getElementById("filme-src").style.display = "none";
+        document.getElementById("filme-nome").innerHTML = "Buscando...";
+        document.getElementById("filme-sinopse").innerHTML = "";
+        fetch(
+            `/api/admin1905/admin/filme?value=${encodeURIComponent(
+                document.getElementById("filme-input").value
+            )}`
+        ).then(async (result) => {
+            const response = await result.json();
+            console.log(response);
+            if (response.success) {
+                document.getElementById("filme-src").style.display = "block";
+                document.getElementById("filme-src").src = response.data.poster;
+                document.getElementById(
+                    "filme-nome"
+                ).innerHTML = `${response.data.titulo} (${response.data.ano})<br><span class="orange">[${response.data.avaliacao} <i class="fa-solid fa-star"></i>]</span>`;
+                document.getElementById("filme-sinopse").innerHTML =
+                    cortarTexto(response.data.sinopse);
+            } else {
+                return (document.getElementById("filme-nome").innerHTML =
+                    "Filme não encontrado.");
+            }
+        });
+    });
+
+    document.getElementById("send-serie").addEventListener("click", (event) => {
+        document.getElementById("serie-src").style.display = "none";
+        document.getElementById("serie-nome").innerHTML = "Buscando...";
+        document.getElementById("serie-sinopse").innerHTML = "";
+        fetch(
+            `/api/admin1905/admin/serie?value=${encodeURIComponent(
+                document.getElementById("serie-input").value
+            )}`
+        ).then(async (result) => {
+            const response = await result.json();
+            console.log(response);
+            if (response.success) {
+                document.getElementById("serie-src").style.display = "block";
+                document.getElementById("serie-src").src = response.data.poster;
+                document.getElementById(
+                    "serie-nome"
+                ).innerHTML = `${response.data.titulo} (${response.data.ano})<br><span class="orange">[${response.data.avaliacao} <i class="fa-solid fa-star"></i>]</span>`;
+                document.getElementById("serie-sinopse").innerHTML =
+                    cortarTexto(response.data.sinopse);
+            } else {
+                return (document.getElementById("serie-nome").innerHTML =
+                    "Série não encontrada.");
+            }
+        });
+    });
+
+    document.getElementById("send-letra").addEventListener("click", (event) => {
+        document.getElementById("song-name").innerHTML = "Buscando...";
+        document.getElementById("song-lyrics").innerHTML = "";
+        fetch(
+            `/api/admin1905/admin/letra?value=${encodeURIComponent(
+                document.getElementById("letra-input").value
+            )}`
+        ).then(async (result) => {
+            const response = await result.json();
+            if (response.success) {
+                document.getElementById("song-name").innerHTML =
+                    response.data.titulo + " - " + response.data.cantor;
+                return (document.getElementById("song-lyrics").innerHTML =
+                    response.data.letrahtml);
+            } else {
+                return (document.getElementById("song-lyrics").innerHTML =
+                    "Música não encontrada.");
+            }
+        });
+    });
+
+    function cortarTexto(texto) {
+        if (texto.length > 200) {
+            return texto.slice(0, 200) + "...";
+        }
+        return texto;
+    }
+</script>
+
+<%- include("./partials/close-body") %>

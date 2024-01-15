@@ -1,0 +1,31 @@
+﻿<header id="navbar">
+    <img
+        src="/images/icon.png"
+        alt="logo Cipher"
+        draggable="false"
+        title="logo Cipher"
+        id="logo"
+    />
+    <nav>
+        <ul>
+            <li><a href="/#" class="hover-effect">Início</a></li>
+            <li><a href="/#about" class="hover-effect">Sobre mim</a></li>
+            <li><a href="/#portfolio" class="hover-effect">Portfólio</a></li>
+            <li><a href="/#contact" class="hover-effect">Contato</a></li>
+            <li><a class="hover-effect orange" onclick="iniciarAudio()">Trilha sonora</a></li>
+            <%if (typeof user !== "undefined" && user) { %>
+                <li><a href="/google/logout" class="hover-effect orange">Sair</a></li>
+            <% } %>
+        </ul>
+    </nav>
+    <a href="/api" class="API hover-effect">
+        <p>+ Cipher API <%if (typeof user !== "undefined" && user) { %> <br><sup><%= user.username %></sup> <% } %></p>
+        <img
+            src="/images/cipherlogo.png"
+            alt="Cipher Character"
+            title="Cipher Character"
+            draggable="false"
+            class="character"
+        />
+    </a>
+</header>

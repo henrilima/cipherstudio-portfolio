@@ -1,0 +1,262 @@
+{
+    "planets": [
+        {
+            "id": "0",
+            "name": "Sol",
+            "resume": "O Sol é a estrela no centro do Sistema Solar. É uma bola quase perfeita de plasma quente, aquecida até a incandescência por reações de fusão nuclear em seu núcleo, irradiando a energia principalmente como luz visível, luz ultravioleta e radiação infravermelha. É de longe a fonte de energia mais importante para a vida na Terra.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fsun.png?alt=media&token=10b44e8d-e9ac-4cf4-b1e9-1dbab44294ee",
+            "searchTags": ["sol", "estrela central"],
+            "features": {
+                "orbitalPeriod": ["0 dias", "0 anos"],
+                "orbitalSpeed": "0 km/h",
+                "rotationDuration": "25 dias, 9 horas e 7 minutos",
+                "radius": "696.340 km",
+                "Diameter": "1.392.700 km",
+                "sunDistance": "0 km",
+                "temperature": "5.505°C",
+                "composition": "Principalmente composto de hidrogênio (cerca de 74%) e hélio (cerca de 24%), com pequenas quantidades de outros elementos.",
+                "activity": "O Sol passa por ciclos de atividade solar, com períodos de máximo e mínimo solar, afetando a ocorrência de manchas solares e ejeções de massa coronal.",
+                "history": "Formou-se a partir de uma nuvem de gás e poeira há aproximadamente 4,6 bilhões de anos. Continuará a brilhar por bilhões de anos mais antes de entrar na fase de gigante vermelha e, finalmente, se transformar em uma anã branca.",
+                "influence": "Além de fornecer luz e calor para os planetas, o Sol exerce influência gravitacional sobre todo o Sistema Solar, mantendo os planetas em suas órbitas.",
+                "spaceMissions": [
+                    "Sonda Parker Solar Probe",
+                    "Observatório Solar e Heliosférico (SOHO)"
+                ],
+                "interestingFacts": [
+                    "O Sol possui mais de 99% da massa de todo o Sistema Solar.",
+                    "A luz que vemos do Sol leva aproximadamente 8 minutos e 20 segundos para chegar à Terra."
+                ]
+            }
+        },
+        {
+            "id": "1",
+            "name": "Mercúrio",
+            "resume": "Mercúrio é o menor planeta do Sistema Solar e o mais próximo do Sol. Sua órbita ao redor do Sol leva 87,96 dias terrestres, o mais curto de todos os planetas solares.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fmercury.png?alt=media&token=fb8874c2-5dbc-4cfd-9dc8-3fcd71157310",
+            "searchTags": ["planeta", "mercurio", "menor planeta"],
+            "features": {
+                "orbitalPeriod": ["87,96 dias", "0,24 anos"],
+                "orbitalSpeed": "47,87 km/s",
+                "rotationDuration": "58 dias, 15 horas e 30 minutos",
+                "radius": "2.439 km",
+                "Diameter": "4.879 km",
+                "sunDistance": "57.910.000 km",
+                "temperature": "167°C",
+                "composition": "Mercúrio possui uma composição rochosa predominante, com uma crosta formada principalmente por basalto e outros silicatos.",
+                "atmosphere": "Mercúrio possui uma exosfera muito tênue, praticamente sem atmosfera significativa.",
+                "history": "Mercúrio foi conhecido desde a antiguidade, sendo observado pelos astrônomos da Babilônia, Grécia e Roma. No entanto, somente após o desenvolvimento de telescópios mais avançados foi possível obter informações mais detalhadas sobre o planeta.",
+                "influence": "Mercúrio exerce uma influência astrológica que varia de acordo com as crenças e práticas de diferentes culturas. Na mitologia romana, Mercúrio era o mensageiro dos deuses e associado ao comércio, viagens e eloquência.",
+                "spaceMissions": ["Mariner 10", "MESSENGER"]
+            },
+            "interestingFacts": [
+                "Mercúrio é o planeta mais próximo do Sol, o que resulta em temperaturas extremamente altas.",
+                "Apesar de ser o planeta mais próximo do Sol, não é o mais quente - essa honra vai para Vênus devido à sua atmosfera densa de dióxido de carbono.",
+                "A rotação de Mercúrio é muito lenta, resultando em dias extremamente longos e noites igualmente longas."
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Vênus",
+            "resume": "Vênus é o segundo planeta do sistema Solar. Tem o nome da deusa romana do amor e da beleza. Como o objeto natural mais brilhante no céu noturno da Terra após a Lua, Vênus pode projetar sombras e ser visível a olho nu em plena luz do dia.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fvenus.png?alt=media&token=35db2fad-aeac-4ad1-a148-7fe209c8f446",
+            "searchTags": ["planeta", "venus"],
+            "features": {
+                "orbitalPeriod": ["224,70 dias", "0,61 anos"],
+                "orbitalSpeed": "35,02 km/s",
+                "rotationDuration": "243 dias e 18 horas",
+                "radius": "6.051 km",
+                "Diameter": "12.104 km",
+                "sunDistance": "108.200.000 km",
+                "temperature": "461°C",
+                "composition": "Vênus possui uma crosta rochosa coberta por um espesso manto de basalto. Sua atmosfera é composta principalmente de dióxido de carbono.",
+                "atmosphere": "A atmosfera de Vênus é extremamente densa e composta principalmente de dióxido de carbono, com nuvens de ácido sulfúrico.",
+                "history": "Vênus foi observado desde a antiguidade e é frequentemente associado a deusas do amor e da beleza em várias mitologias.",
+                "influence": "Vênus é frequentemente associado ao amor e à beleza nas crenças mitológicas e astrológicas.",
+                "spaceMissions": ["Venera", "Magellan", "Akatsuki"]
+            },
+            "interestingFacts": [
+                "Vênus possui uma rotação retrógrada, o que significa que seu eixo gira em direção oposta à maioria dos outros planetas.",
+                "Apesar de ser o planeta mais próximo da Terra, Vênus é muitas vezes chamado de 'gêmeo infernal' devido às suas condições extremas."
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Terra",
+            "resume": "A Terra é o terceiro planeta a partir do Sol e o único objeto astronômico conhecido por abrigar e sustentar vida. Sua hidrosfera é a única no sistema solar que sustenta grandes corpos de água de superfície líquida.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fearth.png?alt=media&token=5fd2f286-9cdc-4724-9e78-b9b8642401b8",
+            "searchTags": ["planeta", "terra"],
+            "features": {
+                "orbitalPeriod": ["365,26 dias", "1 ano"],
+                "orbitalSpeed": "29,78 km/s",
+                "rotationDuration": "23 horas e 56 minutos",
+                "radius": "6.371 km",
+                "Diameter": "12.742 km",
+                "sunDistance": "149.600.000 km",
+                "temperature": "15°C",
+                "composition": "A Terra possui uma crosta rochosa, manto semi-fluído e um núcleo de ferro-níquel. A atmosfera é composta principalmente de nitrogênio e oxigênio.",
+                "atmosphere": "A atmosfera terrestre é composta principalmente de nitrogênio (78%) e oxigênio (21%) com pequenas quantidades de outros gases.",
+                "history": "A Terra é o único planeta conhecido por ter vida. Sua história geológica é marcada por mudanças climáticas, eventos catastróficos e a evolução da vida.",
+                "influence": "A Terra exerce uma influência significativa em seu sistema solar, especialmente na lua e nas marés dos oceanos.",
+                "spaceMissions": ["Apollo", "Viking", "Cassini", "Curiosity"]
+            },
+            "interestingFacts": [
+                "A Terra é o único planeta conhecido por ter vida.",
+                "O nome 'Terra' provavelmente deriva da palavra anglo-saxônica 'erda', que significa solo ou terra."
+            ]
+        },
+        {
+            "id": "4",
+            "name": "Marte",
+            "resume": "Marte é o quarto planeta a partir do Sol, o segundo menor do Sistema Solar. Batizado em homenagem ao deus romano da guerra, muitas vezes é descrito como o 'Planeta Vermelho', porque o óxido de ferro predominante em sua superfície lhe dá uma aparência avermelhada.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fmars.png?alt=media&token=262ffc20-161c-4ab1-9bf1-56cb2f7655e4",
+            "searchTags": ["planeta", "marte"],
+            "features": {
+                "orbitalPeriod": ["686,97 dias", "1,88 anos"],
+                "orbitalSpeed": "24,08 km/s",
+                "rotationDuration": "24 horas e 37 minutos",
+                "radius": "3.397 km",
+                "Diameter": "6.779 km",
+                "sunDistance": "227.940.000 km",
+                "temperature": "-63°C",
+                "composition": "Marte é composto principalmente de rochas e minerais, incluindo sulfatos e óxidos de ferro que dão ao solo sua cor avermelhada.",
+                "atmosphere": "A atmosfera marciana é muito fina, composta principalmente de dióxido de carbono com traços de nitrogênio e argônio.",
+                "history": "Marte foi observado desde a antiguidade e frequentemente associado à guerra e à hostilidade. Missões espaciais como a Viking e Mars rovers têm investigado o planeta em detalhes.",
+                "influence": "Marte tem influência cultural como símbolo de guerra e foi associado a divindades guerreiras em várias mitologias.",
+                "spaceMissions": [
+                    "Mars Rovers (vários)",
+                    "Mars Science Laboratory",
+                    "Mars Reconnaissance Orbiter"
+                ]
+            },
+            "interestingFacts": [
+                "Marte tem a montanha mais alta do sistema solar, o Monte Olimpo, e o cânion mais profundo, o Cânion Valles Marineris.",
+                "O rover Curiosity, da NASA, está atualmente explorando a superfície de Marte, procurando evidências de vida passada."
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Júpiter",
+            "resume": "Júpiter é o quinto planeta do Sol e o maior do Sistema Solar. É um gigante gasoso com uma massa mais de duas vezes e meia a de todos os outros planetas do Sistema Solar combinados, mas um pouco menos de um milésimo da massa do Sol.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fjupiter.png?alt=media&token=e290a350-5653-4d05-954b-557f670242e2",
+            "searchTags": ["planeta", "jupiter", "maior planeta"],
+            "features": {
+                "orbitalPeriod": ["4.331,57 dias", "11,86 anos"],
+                "orbitalSpeed": "13,05 km/s",
+                "rotationDuration": "9 horas e 50 minutos",
+                "radius": "69.911 km",
+                "Diameter": "139.820 km",
+                "sunDistance": "778.500.000 km",
+                "temperature": "-108°C",
+                "composition": "Principalmente hidrogênio e hélio.",
+                "atmosphere": "Camadas de nuvens de amônia, metano e água.",
+                "history": "Foi observado por civilizações antigas e nomeado após o deus romano dos deuses e do céu.",
+                "influence": "Tem impacto significativo nas órbitas e dinâmicas de outros corpos no Sistema Solar."
+            },
+            "spaceMissions": ["Juno"],
+            "interestingFacts": [
+                "Júpiter possui um sistema de anéis, embora não seja tão proeminente quanto os de Saturno.",
+                "A Grande Mancha Vermelha, uma tempestade gigante, é uma característica marcante na atmosfera de Júpiter."
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Saturno",
+            "resume": "Saturno é o sexto planeta e o segundo maior do Sistema Solar, depois de Júpiter. É um gigante gasoso com um raio médio de cerca de nove vezes e meia o da Terra. Ele tem apenas um oitavo da densidade média da Terra; no entanto, com seu volume maior, Saturno é 95 vezes mais massivo.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fsaturn.png?alt=media&token=eb89830c-d689-4192-8c4a-e723214b7422",
+            "searchTags": ["planeta", "saturno", "mais satelites naturais"],
+            "features": {
+                "orbitalPeriod": ["10.757,74 dias", "29,45 anos"],
+                "orbitalSpeed": "9,64 km/s",
+                "rotationDuration": "10 horas e 14 minutos",
+                "radius": "60.268 km",
+                "Diameter": "116.464 km",
+                "sunDistance": "1.429.400.000 km",
+                "temperature": "-139°C",
+                "composition": "Principalmente hidrogênio e hélio, com traços de amônia, metano e água.",
+                "atmosphere": "Camadas de nuvens de amônia e água.",
+                "history": "Observado por civilizações antigas, conhecido por seus impressionantes anéis.",
+                "influence": "Exerce influência significativa nas órbitas de outras luas e destaca-se pelos seus anéis impressionantes."
+            },
+            "spaceMissions": ["Cassini-Huygens"],
+            "interestingFacts": [
+                "Os anéis de Saturno são compostos principalmente de gelo de água com partículas de poeira e rocha.",
+                "Saturno é o planeta menos denso do Sistema Solar, o que significa que ele flutuaria na água."
+            ]
+        },
+        {
+            "id": "7",
+            "name": "Urano",
+            "resume": "Urano é o sétimo planeta do sistema Solar. Seu nome é uma referência ao deus grego do céu, Urano, que, segundo a mitologia grega, era o bisavô de Ares, avô de Zeus e pai de Cronos. Tem o terceiro maior raio planetário e a quarta maior massa planetária do Sistema Solar.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Furanus.png?alt=media&token=89f62d2f-086b-45dd-8b53-c7ee6d478e55",
+            "searchTags": ["planeta", "urano"],
+            "features": {
+                "orbitalPeriod": ["30.799,10 dias", "84,32 anos"],
+                "orbitalSpeed": "6,81 km/s",
+                "rotationDuration": "10 horas e 49 minutos",
+                "radius": "25.362 km",
+                "Diameter": "50.724 km",
+                "sunDistance": "2.870.000.000 km",
+                "temperature": "-200°C",
+                "composition": "Principalmente hidrogênio e hélio, com traços de metano e água.",
+                "atmosphere": "Camadas de nuvens de água, amônia e metano.",
+                "history": "Descoberto por William Herschel em 1781, é o primeiro planeta descoberto com um telescópio.",
+                "influence": "Exerce influência considerável no sistema de satélites ao seu redor."
+            },
+            "spaceMissions": ["Voyager 2"],
+            "interestingFacts": [
+                "Urano possui uma inclinação extrema de eixo, o que significa que ele gira de lado em relação ao plano de sua órbita.",
+                "Foi o primeiro planeta descoberto com um telescópio, em 1781, por William Herschel."
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Netuno",
+            "resume": "Netuno é o oitavo e mais distante planeta solar conhecido do sol. No Sistema Solar, é o quarto maior planeta em diâmetro, o terceiro planeta mais massivo e o planeta gigante mais denso. Tem 17 vezes a massa da Terra, um pouco mais massiva do que seu quase gêmeo Urano.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fneptune.png?alt=media&token=f756d1cd-61c2-42c3-9397-f4a34eaa920e",
+            "searchTags": ["planeta", "netuno"],
+            "features": {
+                "orbitalPeriod": ["60.224,90 dias", "164,88 anos"],
+                "orbitalSpeed": "5,43 km/s",
+                "rotationDuration": "15 horas e 40 minutos",
+                "radius": "24.622 km",
+                "Diameter": "49.244 km",
+                "sunDistance": "4.504.300.000 km",
+                "temperature": "-218°C",
+                "composition": "Principalmente hidrogênio e hélio, com traços de água, amônia e metano.",
+                "atmosphere": "Camadas de nuvens de água, amônia e metano.",
+                "history": "Foi descoberto em 1846 por Johann Galle e Heinrich D'Arrest, com base em cálculos do astrônomo Urbain Le Verrier.",
+                "influence": "Exerce influência nas órbitas de vários objetos no Sistema Solar, especialmente em sua região mais externa."
+            },
+            "spaceMissions": ["Voyager 2"],
+            "interestingFacts": [
+                "Netuno é um dos planetas mais ventosos do Sistema Solar, com ventos que chegam a mais de 2.000 km/h.",
+                "Foi o primeiro planeta descoberto por meio de cálculos matemáticos antes de ser observado diretamente."
+            ]
+        },
+        {
+            "id": "9",
+            "name": "Plutão",
+            "resume": "Plutão é um planeta anão no cinturão de Kuiper, um anel de corpos além da órbita de Netuno. Foi o primeiro e maior objeto do cinturão de Kuiper a ser descoberto. Depois que Plutão foi descoberto em 1930, foi declarado o nono planeta a partir do sol.",
+            "image": "https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fplanets%2Fpluto.png?alt=media&token=57cd9a5e-e8da-4459-9893-0b52f68e6ecc",
+            "searchTags": ["planeta", "plutao"],
+            "features": {
+                "orbitalPeriod": ["90.613,31 dias", "248,09 anos"],
+                "orbitalSpeed": "4,66 km/s",
+                "rotationDuration": "6 dias, 9 horas e 17 minutos",
+                "radius": "1.160 km",
+                "Diameter": "2.376 km",
+                "sunDistance": "5.913.520.000 km",
+                "temperature": "-220°C",
+                "composition": "Composto principalmente de rocha, gelo de água e metano.",
+                "atmosphere": "Tênue e composta por nitrogênio, metano e monóxido de carbono.",
+                "history": "Descoberto por Clyde Tombaugh em 1930, Plutão teve seu status de planeta reclassificado para planeta anão em 2006.",
+                "influence": "Exerce influência em sua vizinhança no cinturão de Kuiper, onde orbita."
+            },
+            "spaceMissions": ["New Horizons"],
+            "interestingFacts": [
+                "Plutão tem uma lua, Caronte, que é tão grande em comparação com Plutão que os dois formam um sistema binário.",
+                "Foi visitado pela sonda New Horizons em 2015, proporcionando dados valiosos sobre esse mundo distante."
+            ]
+        }
+    ]
+}

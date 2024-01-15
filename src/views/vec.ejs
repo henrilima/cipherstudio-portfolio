@@ -1,0 +1,117 @@
+<%- include("./partials/head") %> <%-
+include("./partials/close-head-start-body") %>
+
+<%- include("./components/navbar") %>
+
+<main id="vec">
+    <div>
+        <h2>Validador de CPF</h2>
+        <div>
+            <input
+                type="text"
+                name="cpf"
+                id="cpf"
+                placeholder="Insira aqui o CPF"
+                onkeydown="if(event.key === 'Enter') document.getElementById('send-cpf').click()"
+            />
+            <div id="send-cpf">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div id="cpf-output"></div>
+    </div>
+    <div>
+        <h2>Validador de CNPJ</h2>
+        <div>
+            <input
+                type="text"
+                name="cnpj"
+                id="cnpj"
+                placeholder="Insira aqui o CNPJ"
+                onkeydown="if(event.key === 'Enter') document.getElementById('send-cnpj').click()"
+            />
+            <div id="send-cnpj">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div id="cnpj-output"></div>
+    </div>
+    <div>
+        <h2>Consultor de CEP</h2>
+        <div>
+            <input
+                type="text"
+                name="cep"
+                id="cep"
+                placeholder="Insira aqui o CEP"
+                onkeydown="if(event.key === 'Enter') document.getElementById('send-cep').click()"
+            />
+            <div id="send-cep">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div id="cep-output"></div>
+    </div>
+</main>
+
+<button id="btnTopo" onclick="scrollToTop()" class="hover-effect">
+    Conclusão de leitura: 0%
+    <i class="fa-solid fa-arrows-up-down margin-icon"></i>
+</button>
+
+<script>
+    document.getElementById("send-cpf").addEventListener("click", (event) => {
+        document.getElementById("cpf-output").innerHTML = "Buscando...";
+        fetch(
+            `/api/admin1905/admin/cpf?value=${encodeURIComponent(
+                document.getElementById("cpf").value
+            )}`
+        ).then(async (result) => {
+            const data = await result.json();
+            if (!data.info) {
+                return (document.getElementById("cpf-output").innerHTML =
+                    "Nada definido.");
+            }
+            document.getElementById("cpf-output").innerHTML = data.info;
+        });
+    });
+
+    document.getElementById("send-cnpj").addEventListener("click", (event) => {
+        document.getElementById("cnpj-output").innerHTML = "Buscando...";
+        fetch(
+            `/api/admin1905/admin/cnpj?value=${encodeURIComponent(
+                document.getElementById("cnpj").value
+            )}`
+        ).then(async (result) => {
+            const data = await result.json();
+            if (document.getElementById("cnpj").value == "") {
+                return (document.getElementById("cnpj-output").innerHTML =
+                    "Nada definido.");
+            }
+            document.getElementById("cnpj-output").innerHTML = data.response
+                ? "CNPJ existente."
+                : "CNPJ inexistente.";
+        });
+    });
+
+    document.getElementById("send-cep").addEventListener("click", (event) => {
+        document.getElementById("cep-output").innerHTML = "Buscando...";
+        fetch(
+            `/api/admin1905/admin/cep?value=${encodeURIComponent(
+                document.getElementById("cep").value
+            )}`
+        ).then(async (result) => {
+            const response = await result.json();
+            if (response.success) {
+                return (document.getElementById(
+                    "cep-output"
+                ).innerHTML = `O CEP ${response.data.cep} foi encontrado em ${response.data.localidade}, ${response.data.uf}. (IBGE: ${response.data.ibge}, Logradouro: ${response.data.logradouro})`);
+            } else {
+                return (document.getElementById("cep-output").innerHTML =
+                    "CEP não encontrado.");
+            }
+        });
+    });
+</script>
+
+<%- include("./partials/close-body") %>

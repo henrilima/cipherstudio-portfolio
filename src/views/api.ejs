@@ -1,0 +1,353 @@
+<%- include("./partials/head") %> <%-
+include("./partials/close-head-start-body") %>
+
+<%- include("./components/navbar") %>
+
+<main id="api">
+    <div class="profile bottom-border">
+        <img
+            src="<%- user.avatar %>"
+            alt="user avatar"
+            title="<%- user.username %> avatar"
+            draggable="false"
+            class="avatar"
+        />
+        <div class="keys">
+            <% if (!keys.apiKey || typeof keys === "undefined") { %>
+            <a class="button hover-effect" onclick="gerarChaveAPI();"
+                >Crie sua chave da API</a
+            >
+            <% } else { %>
+            <h5><%- user.email %></h5>
+            <h2>Sua chave da API:</h2>
+            <span id="api-id" class="hover-effect"
+                ><p><strong>ID:</strong> <%- user.googleId %></p>
+                <i class="fa-solid fa-copy"></i
+            ></span>
+            <span id="api-secret" class="hover-effect"
+                ><p><strong>Secret:</strong> Clique para copiar</p>
+                <i class="fa-solid fa-copy"></i
+            ></span>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="functions">
+        <div class="base">
+            <div>
+                <img src="https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fimages%2Fcode.webp?alt=media&token=3eb0434e-26fd-4b6a-a74c-90788e7115cc" alt="code" draggable="false" />
+            </div>
+            <div>
+                <h2>Como usar a Cipher API+</h2>
+                <p>
+                    A API da Cipher é totalmente gratuita para uso, porém, para
+                    conseguir usar ela é preciso adquirir sua chave da API,
+                    disponível logo acima.
+                </p>
+                <p>
+                    Você pode realizar um total de
+                    <strong
+                        >2.000 requisições diariamente no plano gratuito</strong
+                    >, <strong>6.000 no plano silver</strong>, e
+                    <strong>12.000 no plano gold</strong>.
+                </p>
+                <br />
+                <p>
+                    Segue um exemplo base em JavaScript de como deve ser feita
+                    uma requisição na API, onde <strong>id</strong> é seu id de
+                    usuário, <strong>secret</strong> é sua chave única da API, e
+                    <strong>api</strong> é funcionalidade da API que você quer
+                    utilizar.
+                </p>
+                <br /><br />
+                <p>
+                    <strong>OBS:</strong> Não compartilhe seu ID e chave da API,
+                    além de serem informações pessoais suas, quanto mais pessoas
+                    as utilizam, mais rápido você atinge seu limite de
+                    requisições.
+                </p>
+            </div>
+        </div>
+        <hr class="hr" />
+        <div class="api-functions">
+            <div class="box">
+                <i class="fa-solid fa-earth-americas"></i>
+                <div>
+                    <h2>Planetas</h2>
+                    <p>
+                        Essa função traz dados sobre todos os planetas do
+                        sistema solar, com plutão incluso.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('planetas');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>
+                <div>
+                    <h2>Abreviador</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função abrevia números altos, como por exemplo: <strong>1.000.000</strong> : <strong>1M</strong>
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('abreviar');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-user"></i>
+                <div>
+                    <h2>Validador CPF</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função valida números de CPF, retorna um valor booleano e os estados de onde pode ter sido emitido.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('cpf');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('cpf');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>
+                    <h2>Validador CNPJ</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função valida números de CNPJ e retorna um valor booleano.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('cnpj');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('cnpj');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-house-flag"></i>
+                <div>
+                    <h2>Consultar CEP</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função consulta um CEP e retorna um objeto com os dados do CEP.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('cep');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('cep');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-film"></i>
+                <div>
+                    <h2>Info. de Filmes</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função consulta um filme e retorna um objeto com os dados.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('filme');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('filme');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-dragon"></i>
+                <div>
+                    <h2>Info. de Séries</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função consulta uma serie e retorna um objeto com os dados.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('serie');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('serie');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-microphone"></i>
+                <div>
+                    <h2>Letra de Música</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p>  Essa função consulta e retorna a letra da primeira música que o título se parecer com indicado.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('letra');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                    <br>
+                    <span class="hover-effect" onclick="tryAPI('letra');"
+                        ><p>Clique para testar</p>
+                        <i class="fa-solid fa-vial-circle-check"></i
+                    ></span>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-music"></i>
+                <div>
+                    <h2>Info. de Música</h2>
+                    <p>
+                        <p class="text-emphasis">[Requer parâmetro]</p> Essa função consulta e retorna um objeto com informações da primeira música de acordo com o título.
+                    </p>
+                    <span class="hover-effect" onclick="getUrl('musica');"
+                        ><p>[GET] Clique para copiar</p>
+                        <i class="fa-solid fa-copy"></i
+                    ></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<button id="btnTopo" onclick="scrollToTop()" class="hover-effect">
+    Conclusão de leitura: 0%
+    <i class="fa-solid fa-arrows-up-down margin-icon"></i>
+</button>
+<div class="mouse-cursor"></div>
+
+<script src="/scripts/api.js"></script>
+<script>
+    function gerarChaveAPI() {
+        database.set(`api/users/<%- user.googleId %>`, {
+            keys: {
+                apiKey: gerarApiKey(32),
+            },
+        });
+
+        Swal.fire({
+            text: "Gerando sua chave da API.",
+            timer: 4500,
+            showConfirmButton: false,
+        });
+
+        setTimeout(() => location.reload(), 5000);
+    }
+
+    const idAPI = document.getElementById("api-id");
+    idAPI.addEventListener("click", function () {
+        const textarea = document.createElement("textarea");
+        textarea.value = `<%- user.googleId %>`;
+
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        Swal.fire({
+            text: "Copiado para a área de transferência.",
+            timer: 1000,
+            showConfirmButton: false,
+        });
+    });
+
+    const secretAPI = document.getElementById("api-secret");
+    secretAPI.addEventListener("click", function () {
+        const textarea = document.createElement("textarea");
+        textarea.value = `<%- keys.apiKey %>`;
+
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        Swal.fire({
+            text: "Copiado para a área de transferência.",
+            timer: 1000,
+            showConfirmButton: false,
+        });
+    });
+
+    function getUrl(type) {
+        const textarea = document.createElement("textarea");
+
+        switch (type) {
+            case "planetas":
+                type = "planetas";
+                break;
+            case "abreviar":
+                type = "abreviar";
+                break;
+            case "cpf":
+                type = "cpf";
+                break;
+            case "cnpj":
+                type = "cnpj";
+                break;
+            case "cep":
+                type = "cep";
+                break;
+            case "filme":
+                type = "filme";
+                break;
+            case "serie":
+                type = "serie";
+                break;
+            case "letra":
+                type = "letra";
+                break;
+            case "musica":
+                type = "musica";
+                break;
+        }
+
+        if (`<%- keys.apiKey ? true : false %>` == "true" && type != "planetas") {
+            textarea.value = `<%= url %>/api/<%- user.googleId %>/<%- keys.apiKey %>/${type}?value=` + '${encodeURIComponent("Texto que você deseja utilizar como valor")}';
+        } else if (`<%- keys.apiKey ? true : false %>` == "false"  && type != "planetas") {
+            textarea.value = '<%= url %>/api/${id}/${secret}/${type}?value=${encodeURIComponent("Texto que você deseja utilizar como valor")}';
+        } else if (`<%- keys.apiKey ? true : false %>` == "true" && type == "planetas") {
+            textarea.value = `<%= url %>/api/<%- user.googleId %>/<%- keys.apiKey %>/${type}`;
+        } else {
+            textarea.value = '<%= url %>/api/${id}/${secret}/${type}';
+        }
+
+        document.body.appendChild(textarea);
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        Swal.fire({
+            text: `URL completa copiada para a área de transferência.`,
+            timer: 1000,
+            showConfirmButton: false,
+        });
+        document.body.removeChild(textarea);
+    }
+
+    function tryAPI(type) {
+        window.location.href = `/api/try/${type}`;
+    };
+</script>
+
+<%- include("./partials/close-body") %>

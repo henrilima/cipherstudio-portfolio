@@ -1,0 +1,187 @@
+<%- include("./partials/head") %>
+
+<link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fimages%2Fcipher.webp?alt=media&token=0af28282-c548-4a70-8439-f83bbd197254" as="image">
+<link rel="preload" href="https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fimages%2Fhenri.webp?alt=media&token=41739724-9213-4c67-8daf-d4750508e8ae" as="image">
+
+<%- include("./partials/close-head-start-body") %>
+
+<%- include("./loading") %>
+<%- include("./components/navbar") %>
+
+<main class="bottom-border" id="main">
+    <section class="handwriting-animation">
+        <svg class="text-svg">
+            <text
+                x="50%"
+                y="50%"
+                text-anchor="middle"
+                alignment-baseline="middle"
+                class="text-draw hover-effect"
+            >
+                Cipher STUDIO+
+            </text>
+        </svg>
+    </section>
+    <div>
+        <div>
+            <p>
+                Olá, Seja bem-vindo(a)! O Cipher Studio não é apenas um site, é
+                o meu portfólio e playground digital, e quero compartilhar
+                contigo o que posso fazer!
+            </p>
+            <span class="button hover-effect emphasis"
+                ><a href="#about"
+                    >Nos conheça melhor
+                    <i class="fa-solid fa-circle-info"></i></a
+            ></span>
+        </div>
+        <img
+            src="https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fimages%2Fcipher.webp?alt=media&token=0af28282-c548-4a70-8439-f83bbd197254"
+            alt="cipher"
+            draggable="false"
+        />
+    </div>
+</main>
+
+<section id="about" class="bottom-border">
+    <div>
+        <img
+            src="https://firebasestorage.googleapis.com/v0/b/henrilimadev.appspot.com/o/henrilima-portfolio%2Fimages%2Fhenri.webp?alt=media&token=41739724-9213-4c67-8daf-d4750508e8ae"
+            alt="Creator"
+            title="Henri"
+            draggable="false"
+        />
+    </div>
+    <div>
+        <h1>E aí, pessoal!</h1>
+        <p>
+            Meu nome é Henri, o cérebro por trás do Cipher Studio. 🧠<br /><br />
+            Apaixonado por programação e entusiasta da biologia, estou aqui para
+            decifrar os desafios do universo digital. Com 18 anos e uma paixão
+            imensa por código, criei o Cipher Studio como meu playground, onde a
+            magia acontece. <br />
+            Aqui, cada projeto é uma história, cada linha de código é um passo
+            na jornada da inovação. O Cipher Studio não é só um conjunto de
+            ferramentas e uma API incrível; é meu portfólio, é meu espaço de
+            criação, é o lugar onde o futuro é codificado.
+        </p>
+        <span class="button hover-effect emphasis" id="downloadCV"
+            ><a href="#about" style="pointer-events: none"
+                >Download CV
+                <i
+                    class="fa-solid fa-paperclip"
+                    style="pointer-events: none"
+                ></i></a
+        ></span>
+    </div>
+</section>
+
+<section id="portfolio" class="bottom-border">
+    <div class="texts">
+        <h2>Portfólio</h2>
+    </div>
+    <div class="boxies">
+        <% if (portfolio && portfolio != undefined) { %> <% for (let i in
+        portfolio) { %> <% if (portfolio[i].type) { %>
+        <div class="box figma">
+            <img
+                src="<%- portfolio[i].src %>"
+                alt="project"
+                draggable="false"
+            />
+            <div class="box-texts">
+                <h2>Design: <%- portfolio[i].nome %></h2>
+                <span class="button hover-effect emphasis"
+                    ><a href="<%- portfolio[i].href %>" target="_blank"
+                        >Veja no Figma
+                        <i class="fa-solid fa-up-right-from-square"></i></a
+                ></span>
+            </div>
+        </div>
+        <% } else { %>
+        <div class="box">
+            <img
+                src="<%- portfolio[i].src %>"
+                alt="project"
+                draggable="false"
+            />
+            <div class="box-texts">
+                <h2><%- portfolio[i].nome %></h2>
+                <span class="button hover-effect emphasis"
+                    ><a href="<%- portfolio[i].href %>" target="_blank"
+                        >Veja no Github
+                        <i class="fa-solid fa-up-right-from-square"></i></a
+                ></span>
+            </div>
+        </div>
+        <% } %> <% } %> <% } else { %>
+        <p>Ainda estamos trabalhando nisso...</p>
+        <% } %>
+    </div>
+</section>
+
+<section id="contact" class="bottom-border">
+    <div>
+        <span>
+            <h2>Informações de Contato:</h2>
+            <p>
+                Tá afim de trocar uma ideia? Manda aquele e-mail massa pra mim:
+                <br /><br />
+                <span class="button hover-effect emphasis"
+                    ><a target="_blank" href="mailto:henrilima.job@gmail.com"
+                        >henrilima.job@gmail.com
+                        <i class="fa-solid fa-envelope"></i></a
+                ></span>
+            </p>
+        </span>
+        <div>
+            <span>
+                <h2>Redes Sociais:</h2>
+                <p>Tô sempre online! Segue lá:</p>
+            </span>
+            <span class="button hover-effect emphasis"
+                ><a
+                    target="_blank"
+                    href="https://www.instagram.com/henrilima.llsh/"
+                    >Instagram <i class="fa-brands fa-instagram"></i></a
+            ></span>
+            <span class="button hover-effect emphasis"
+                ><a target="_blank" href="https://wa.me/5581996421340"
+                    >Whatsapp <i class="fa-brands fa-whatsapp"></i></a
+            ></span>
+            <span class="button hover-effect emphasis"
+                ><a target="_blank" href="https://linkedin.com/in/henrilima/"
+                    >LinkedIn <i class="fa-brands fa-linkedin"></i></a
+            ></span>
+        </div>
+    </div>
+    <img src="/images/Mailbox-bro.png" alt="Mailbox" />
+</section>
+
+<footer>
+    <img src="/images/icon.png" alt="logo" draggable="false" />
+    <div>
+        <h2>Cipher STUDIO+</h2>
+        <span class="button hover-effect emphasis"
+            ><a target="_blank" href="https://github.com/henrilima/"
+                >Github <i class="fa-brands fa-github-alt"></i></a
+        ></span>
+    </div>
+</footer>
+
+<button id="btnTopo" onclick="scrollToTop()" class="hover-effect">
+    Conclusão de leitura: 0%
+    <i class="fa-solid fa-arrows-up-down margin-icon"></i>
+</button>
+<div class="mouse-cursor"></div>
+
+<script>
+    document.getElementById("downloadCV").addEventListener("click", (e) => {
+        var link = document.createElement("a");
+        link.href = "/document/CV.pdf";
+        link.download = "Henri Lima CV.pdf";
+        link.click();
+    });
+</script>
+
+<%- include("./partials/close-body") %>

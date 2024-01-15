@@ -1,0 +1,25 @@
+{
+  "name": "henrilima-portfolio",
+  "version": "1.0.0",
+  "description": "Portfólio de Henri Lima. Possui licença autônima.",
+  "main": "./src/app.js",
+  "author": "Henri Lima",
+  "license": "henrilima",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-session-firebase": "^11.0.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "firebase": "8.10.0",
+    "nodemon": "^3.0.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "shorten-firebase.realtime-database": "^2.5.0"
+  }
+}

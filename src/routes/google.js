@@ -1,0 +1,1 @@
+const router=require("express").Router(),passport=require("passport");router.get("/",passport.authenticate("google")),router.get("/callback",passport.authenticate("google",{failureRedirect:"/",successRedirect:"/API"})),router.get("/logout",(e,t,r)=>{e.user?e.logout(function(e){if(e)return r(e);t.redirect("/")}):t.redirect("/")}),module.exports=router;

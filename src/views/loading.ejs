@@ -1,0 +1,41 @@
+<main id="loading">
+    <h2>Olá!</h2>
+    <p>
+        Nós da <span class="orange">Cipher Studio+</span> estamos personalizando
+        tudo, para que você tenha a melhor experiência possível. :D
+    </p>
+    <p id="timeout">(10s)</p>
+</main>
+
+<script>
+    function start() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        document.body.style.overflow = "hidden";
+        let timeout = 10;
+
+        const interval = setInterval(() => {
+            timeout = timeout - 1;
+            if (timeout < 0) {
+                document.getElementById("timeout").innerHTML = `Concluído`;
+                clearInterval(interval);
+
+                document.getElementById("loading").style.animation =
+                    "zeroTimeout 2s ease forwards";
+                document.body.style.overflow = "auto";
+                return (document.getElementsByClassName(
+                    "text-draw"
+                )[0].style.animation = "draw 15s forwards");
+            }
+            document.getElementById("timeout").innerHTML = `(${timeout}s)`;
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        }, 1000);
+    }
+
+    start();
+</script>
